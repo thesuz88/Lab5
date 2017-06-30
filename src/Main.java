@@ -18,9 +18,9 @@ public class Main {
             System.out.println("How many sides should each die have?");
             int sides = scan.nextInt();
 
-            System.out.println("Roll the dice? (y/n)");
-            String choice = scan.nextLine();
-            choice = scan.nextLine();
+//            System.out.println("Roll the dice? (y/n)");
+//            String choice = scan.nextLine();
+//            choice = scan.nextLine();
 
             System.out.println("\nYou rolled:");
             //className(callVar)
