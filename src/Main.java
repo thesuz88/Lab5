@@ -38,23 +38,22 @@ public class Main {
             if (choice.equalsIgnoreCase("y")) {
 
                 System.out.println("\nYou rolled:");
-                //className(callVar)
+               
                 System.out.println("Die 1: " + rollOut(sides));
                 System.out.println("Die 2: " + rollOut(sides));
-            }
-            else {
-                System.out.println("Do you want to change the sides on the die? (y/n)");
+            } else {
+                System.out.println("Do you want to change the sides on the die?");
+                System.out.println("Type 'y' to continue or 'q' to quit the program.");
                 String changeSides = scan.nextLine();
-                if (changeSides.equalsIgnoreCase("y")){
-
+                if (changeSides.equalsIgnoreCase("y")) {
                     continue;
-                } else {
+                } else if (changeSides.equalsIgnoreCase("q")) {
                     break;
                 }
             }
 
             System.out.println("Would you like to play again? (y/n)");
-            scan.nextLine();
+
             roll = scan.nextLine();
 
         }
