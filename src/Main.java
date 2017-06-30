@@ -9,13 +9,27 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String roll = "y";
+        int sides = 0;
+        boolean isNumber;
 
         System.out.println("Welcome to theGrand Circus Casino!\n");
 
 
         while (roll.equalsIgnoreCase("y")) {
-            System.out.println("How many sides should each die have?");
-            int sides = scan.nextInt();
+            System.out.println("How many sides should each die have? (Enter whole number)");
+
+            do {
+                if (scan.hasNextInt()) {
+                    sides = scan.nextInt();
+                    isNumber = true;
+                } else {
+                    System.out.println("Hey, that's not a whole number!");
+                    System.out.println("Enter new number: ");
+                    isNumber = false;
+                    scan.nextLine(); //garbage line to clean out scanner
+                }
+
+            } while (!(isNumber));
 
 
             System.out.println("Roll the " + sides + "-sided pair of die? (y/n)");
@@ -39,7 +53,7 @@ public class Main {
                 }
             }
 
-            System.out.println("\nWould you like to play again? (y/n)");
+            System.out.println("Would you like to play again? (y/n)");
             scan.nextLine();
             roll = scan.nextLine();
 
