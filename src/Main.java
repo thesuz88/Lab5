@@ -12,22 +12,35 @@ public class Main {
 
         System.out.println("Welcome to theGrand Circus Casino!\n");
 
-        while (roll.equalsIgnoreCase("y")) {
-            Random random = new Random();
 
+        while (roll.equalsIgnoreCase("y")) {
             System.out.println("How many sides should each die have?");
             int sides = scan.nextInt();
 
-//            System.out.println("Roll the dice? (y/n)");
-//            String choice = scan.nextLine();
-//            choice = scan.nextLine();
 
-            System.out.println("\nYou rolled:");
-            //className(callVar)
-            System.out.println("Die 1: " + rollOut(sides));
-            System.out.println("Die 2: " + rollOut(sides));
+            System.out.println("Roll the " + sides + "-sided pair of die? (y/n)");
+            String choice = scan.nextLine();
+            choice = scan.nextLine();
+            if (choice.equalsIgnoreCase("y")) {
+
+                System.out.println("\nYou rolled:");
+                //className(callVar)
+                System.out.println("Die 1: " + rollOut(sides));
+                System.out.println("Die 2: " + rollOut(sides));
+            }
+            else {
+                System.out.println("Do you want to change the sides on the die? (y/n)");
+                String changeSides = scan.nextLine();
+                if (changeSides.equalsIgnoreCase("y")){
+
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             System.out.println("\nWould you like to play again? (y/n)");
+            scan.nextLine();
             roll = scan.nextLine();
 
         }
